@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux'
 
 
 const Notification = () => {
-  const notification = useSelector(({ message }) => {
-    console.log(message)
-    return message
+  const notification = useSelector(({ notification }) => {
+    return notification
   })
   const style = {
     border: 'solid',
