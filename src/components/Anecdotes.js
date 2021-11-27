@@ -7,16 +7,24 @@ const Anecdotes = () => {
     const anecdotes = useSelector(({ anecdotes }) => {
         return anecdotes
     })
+
+    const filter = useSelector(({ filter }) => {
+        return filter.toUpperCase()
+    })
+
+    console.log(filter)
     const dispatch = useDispatch()
 
     const sortedAnecdotes = anecdotes.sort((a,b) => {
         return a.votes - b.votes
     })
 
+    const filteredAnecdotes = sortedAnecdotes.filter(anecdote => anecdote.content.toUpperCase().includes(filter));
+
     return (
         <div>
             <h2>Anecdotes</h2>
-            {sortedAnecdotes.map(anecdote =>
+            {filteredAnecdotes.map(anecdote =>
                 <div key={anecdote.id}>
                 <div>
                     {anecdote.content}
