@@ -12,7 +12,6 @@ const Anecdotes = () => {
         return filter.toUpperCase()
     })
 
-    console.log(filter)
     const dispatch = useDispatch()
 
     const sortedAnecdotes = anecdotes.sort((a,b) => {

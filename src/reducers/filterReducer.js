@@ -8,7 +8,6 @@ const filterReducer = (state = '', action) => {
 }
 
 export const createFilter = (content) => {
-    //console.log(content)
     return {
       type: 'NEW_FILTER',
       content
