@@ -1,19 +1,28 @@
-const initialState = "Welcome to the application"
-
-const notificationReducer = (state = initialState, action) => {
+const notificationReducer = (state = 'Welcome to the application', action) => {
     switch (action.type) {
-      case 'SET_MESSAGE':
-        return action.message
+      case 'CLEAR_NOTIFICATION': 
+        return action.notification
+      case 'NOTIFICATION':
+        return action.notification
       default:
         return state
     }
   }
 
-export const messageChange = message => {
-  return {
-    type: 'SET_MESSAGE',
-    message,
+export const setNotification = (notification, displayTime) => {
+    return async dispatch => {
+      dispatch({
+        type: 'NOTIFICATION',
+        notification,
+      })
+  
+      setTimeout(() => {
+        dispatch({
+          type: 'CLEAR_NOTIFICATION',
+          notification: 'Welcome to the application'
+        })
+      }, displayTime * 1000)
+    }
   }
-}
 
 export default notificationReducer
