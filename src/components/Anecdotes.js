@@ -14,11 +14,14 @@ const Anecdotes = () => {
 
     const dispatch = useDispatch()
 
+
     const sortedAnecdotes = anecdotes.sort((a,b) => {
         return a.votes - b.votes
     })
 
-    const filteredAnecdotes = sortedAnecdotes.filter(anecdote => anecdote.content.toUpperCase().includes(filter));
+
+
+    const filteredAnecdotes = sortedAnecdotes.filter(anecdote => anecdote.content.toUpperCase().includes(filter))
 
     return (
         <div>
