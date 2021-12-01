@@ -11,18 +11,20 @@ const Anecdotes = (props) => {
     const dispatch = useDispatch()
 
 
+    console.log(props.anecdotes)
     const sortedAnecdotes = props.anecdotes.sort((a,b) => {
         return a.votes - b.votes
     })
 
+    console.log(sortedAnecdotes)
 
-
-    const filteredAnecdotes = sortedAnecdotes.filter(anecdote => anecdote.content.toUpperCase().includes(filter))
+    // const filteredAnecdotes = sortedAnecdotes.filter(anecdote => anecdote.content.toUpperCase().includes(filter))
+    sortedAnecdotes.filter(anecdote => console.log(anecdote.content))
 
     return (
         <div>
             <h2>Anecdotes</h2>
-            {filteredAnecdotes.map(anecdote =>
+            {sortedAnecdotes.map(anecdote =>
                 <div key={anecdote.id}>
                 <div>
                     {anecdote.content}
