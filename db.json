@@ -44,6 +44,11 @@
       "content": "Testing the backend again",
       "votes": 0,
       "id": 9
+    },
+    {
+      "content": "hello",
+      "votes": 0,
+      "id": 10
     }
   ]
 }
